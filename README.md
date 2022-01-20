@@ -13,7 +13,7 @@ git clone https://github.com/inzamrzn918/Attendance-Record-Using-Machine-Learnin
 ## SETUP
 
 ```python
-pip install -r requiremnt.txt
+pip install -r requirements.txt
 ```
 
 ## INSTALL DATABASE
