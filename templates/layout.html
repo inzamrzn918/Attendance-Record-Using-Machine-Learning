@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/all.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js')}}"></script>
+    <title>{% block title %}{% endblock %} - AI System</title>
+    {% endblock %}
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+  <a class="navbar-brand" href="#">Student Records</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Today</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/new_student">Admission</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/attendance">Attendance</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/students">Students</a>
+      </li>
+    </ul>
+  </div>
+      </div>
+</nav>
+    <div id="content">{% block content %} {% endblock %}</div>
+<!--    <div id="footer">-->
+<!--      {% block footer %}-->
+<!--      &copy; None-->
+<!--      {% endblock %}-->
+<!--    </div>-->
+  </body>
+</html>

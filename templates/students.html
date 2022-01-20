@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="container text-center p-4">
+        <b class="alert alert-success">All Student</b>
+    </div>
+    <table class="table table-sm table-centered">
+        <thead>
+            <tr>
+                <th>IMAGE</th>
+                <th>ROLL NO</th>
+                <th>NAME</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+
+         {% for student in data %}
+
+            <tr>
+                <td>
+                    <img src="{{url_for('download_file', filename=student.img)}}" alt="{{student.img}}" height="70px" class="img img-xs">
+                </td>
+                <td>{{student.roll_no}}</td>
+                <td>{{student.name}}</td>
+
+                <td>
+                    <div class="btn-group">
+                        <a href="/student/{{student.student_id}}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
+                        <form action="/student" method="post">
+                            <input type="text" hidden name="id" value="{{student.student_id}}">
+                        <input type="text" hidden name="action" value="delete">
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    </form>
+                </div></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+{% endblock %}

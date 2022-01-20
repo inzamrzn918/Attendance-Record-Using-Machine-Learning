@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+               <div class="container-fluid mt-4 text-center">
+
+                   <img src="{{url_for('read_video_frame')}}" alt="" class="img mb-4 mt-4" id="videoframe">
+
+                    <form action="attendance" method="post" class="">
+                        <input type="number" value="1" hidden name="key">
+                        <input type="submit" name="" id="" value="Capture" class="btn btn-primary">
+                   </form>
+               </div>
+            <br>
+            {{msg}}
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+{% endblock %}

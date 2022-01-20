@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <form action="{{url_for('do_on_student')}}" method="post" enctype="multipart/form-data" class="m-4">
+
+                <input name="roll_no" class="form-control m-3" placeholder="Enter Roll No" required type="text" value="{{data.roll_no}}">
+                <input name="id" class="form-control m-3" placeholder="Enter Roll No" required type="text" value="{{data.student_id}}" hidden>
+                <input name="action" class="form-control m-3" placeholder="Enter Roll No" required type="text" value="edit" hidden>
+                <input name="name" class="form-control m-3" placeholder="Enter Student Name" required type="text" value="{{data.name}}">
+
+
+                <div class="row">
+                    <div class="col-3 text-center">
+                         <img src="{{url_for('download_file', filename=data.image)}}" alt="{{data.img}}" height="70px" class="img img-xs">
+                    </div>
+                    <div class="col-9">
+                         <input name="image" class="form-control mt-3" type="file" value="" accept="image/jpeg">
+                    </div>
+                </div>
+                <p class="text-center mt-4"><span class="text-danger">* </span>Leave field blank if you don't want to update</p>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+
+            </form>
+            <br>
+            {{msg}}
+        </div>
+    </div>
+</div>
+{% endblock %}
