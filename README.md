@@ -115,5 +115,3 @@ Contributions to enhance this project are welcome. To contribute:
 This project is licensed under the MIT License. The LICENSE file in the repository provides more information.
 
 ---
-
-*Note: This project is actively maintained, with ongoing efforts to enhance features and optimize performance.* 
